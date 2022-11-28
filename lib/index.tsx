@@ -189,6 +189,7 @@ export class QRCode extends React.Component<IProps, {}> {
 
     private drawLifeTaggerImage(x, y, size, ctx) {
         console.log('i am calling the drawLifeTaggerImage method')
+        const parser = new DOMParser();
         const lifeTaggerSVG = `<svg width="64" height="65" viewBox="0 0 64 65" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect y="42" width="64" height="6" fill="white"/>
 <rect x="46" width="18" height="6" fill="white"/>
@@ -209,7 +210,7 @@ export class QRCode extends React.Component<IProps, {}> {
 <path d="M51.7981 63.9614H48.6557V55.2273H51.7145C52.5747 55.2273 53.3314 55.4145 53.9846 55.7889C54.6378 56.1553 55.1476 56.6691 55.514 57.3302C55.8884 57.9834 56.0755 58.7441 56.0755 59.6123C56.0755 60.4646 55.8923 61.2213 55.5259 61.8825C55.1675 62.5356 54.6657 63.0454 54.0205 63.4118C53.3832 63.7782 52.6424 63.9614 51.7981 63.9614ZM50.1851 55.9323V63.2684L49.4563 62.5516H51.6547C52.2362 62.5516 52.738 62.4321 53.1602 62.1931C53.5824 61.9541 53.905 61.6156 54.128 61.1775C54.351 60.7394 54.4625 60.2177 54.4625 59.6123C54.4625 58.991 54.347 58.4613 54.116 58.0232C53.885 57.5771 53.5545 57.2346 53.1243 56.9956C52.6942 56.7567 52.1765 56.6372 51.5711 56.6372H49.4563L50.1851 55.9323Z" fill="white"/>
 <path d="M64 63.9614H58.5755V55.2273H64V56.6372H59.5672L60.1049 56.1473V58.8835H63.5938V60.2336H60.1049V63.0414L59.5672 62.5516H64V63.9614Z" fill="white"/>
 </svg>`
-        ctx.drawImage(lifeTaggerSVG, x, y, size, size)
+        ctx.drawImage(parser.parseFromString(lifeTaggerSVG, "image/svg+xml"), x, y, size, size)
     }
 
     /**
