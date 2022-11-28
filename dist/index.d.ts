@@ -40,6 +40,7 @@ export declare class QRCode extends React.Component<IProps, {}> {
      * Draw a single positional pattern eye.
      */
     private drawPositioningPattern;
+    private drawLifeTaggerImage;
     /**
      * Is this dot inside a positional pattern zone.
      */
