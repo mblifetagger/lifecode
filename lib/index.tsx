@@ -179,7 +179,7 @@ export class QRCode extends React.Component<IProps, {}> {
 
         // Outer box
         if(position == 3) {
-            size = cellSize * 3;
+            size = cellSize * 6;
             y += cellSize * 2;
             x += cellSize * 2;
             this.drawLifeTaggerImage(x, y, size, ctx, colorOuter);
