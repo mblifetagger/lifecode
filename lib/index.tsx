@@ -220,10 +220,14 @@ export class QRCode extends React.Component<IProps, {}> {
 
         let blob = new Blob([lifeTaggerSVG], {type: 'image/svg+xml'});
         let url = URL.createObjectURL(blob);
-        let image = document.createElement('img');
+        let image = new Image();
+        image.onload = () => {
+            ctx.save();
+            ctx.drawImage(image, x, y, size, size)
+            ctx.restore();
+        };
         image.src = url;
         console.log('image that should be rendered ', image);
-        ctx.drawImage(image, x, y, size, size)
     }
 
     /**
