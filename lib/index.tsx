@@ -179,7 +179,7 @@ export class QRCode extends React.Component<IProps, {}> {
 
         // Outer box
         if(position == 3) {
-            this.drawLifeTaggerImage(x, y, size, ctx, colorOuter);
+            this.drawLifeTaggerImage(x, y, size, ctx, colorInner);
         } else {
             this.drawRoundedSquare(lineWidth, x, y, size, colorOuter, radiiOuter, false, ctx);
         }
@@ -223,7 +223,7 @@ export class QRCode extends React.Component<IProps, {}> {
         let eyeImage = new Image();
 
         if (eyeImage.complete) {
-            console.log('eyeImage is completed successfully');
+            console.log('eyeImage is completed successfully ', size);
             ctx.save();
             ctx.drawImage(eyeImage, x, y, size, size)
             ctx.restore();

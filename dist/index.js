@@ -119,7 +119,7 @@ var QRCode = /** @class */ (function (_super) {
         var size = cellSize * 7;
         // Outer box
         if (position == 3) {
-            this.drawLifeTaggerImage(x, y, size, ctx, colorOuter);
+            this.drawLifeTaggerImage(x, y, size, ctx, colorInner);
         }
         else {
             this.drawRoundedSquare(lineWidth, x, y, size, colorOuter, radiiOuter, false, ctx);
@@ -140,7 +140,7 @@ var QRCode = /** @class */ (function (_super) {
         var url = URL.createObjectURL(blob);
         var eyeImage = new Image();
         if (eyeImage.complete) {
-            console.log('eyeImage is completed successfully');
+            console.log('eyeImage is completed successfully ', size);
             ctx.save();
             ctx.drawImage(eyeImage, x, y, size, size);
             ctx.restore();
