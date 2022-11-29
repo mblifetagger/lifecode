@@ -128,8 +128,8 @@ var QRCode = /** @class */ (function (_super) {
         size = cellSize * 3;
         y += cellSize * 2;
         x += cellSize * 2;
-        if (position > 3) {
-            this.drawRoundedSquare(lineWidth, x, y, size, colorInner, radiiInner, false, ctx);
+        if (position < 3) {
+            this.drawRoundedSquare(lineWidth, x, y, size, colorInner, radiiInner, true, ctx);
         }
     };
     ;
