@@ -222,6 +222,7 @@ export class QRCode extends React.Component<IProps, {}> {
         let url = URL.createObjectURL(blob);
         let image = new Image();
         image.onload = () => {
+            console.log('Image loaded   successfully');
             ctx.save();
             ctx.drawImage(image, x, y, size, size)
             ctx.restore();
