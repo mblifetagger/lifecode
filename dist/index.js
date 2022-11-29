@@ -230,7 +230,7 @@ var QRCode = /** @class */ (function (_super) {
             }
         }
         // Draw positioning patterns
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < 4; i++) {
             var _b = positioningZones[i], row = _b.row, col = _b.col;
             var radii = eyeRadius;
             var color = void 0;

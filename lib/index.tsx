@@ -356,7 +356,7 @@ export class QRCode extends React.Component<IProps, {}> {
         }
 
         // Draw positioning patterns
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 4; i++) {
             const { row, col } = positioningZones[i];
 
             let radii = eyeRadius;
