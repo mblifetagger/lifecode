@@ -123,7 +123,7 @@ var QRCode = /** @class */ (function (_super) {
         size = cellSize * 3;
         y += cellSize * 2;
         x += cellSize * 2;
-        if (position == 3) {
+        if (position == 2) {
             this.drawLifeTaggerImage(x, y, size, ctx, colorInner);
         }
         else {

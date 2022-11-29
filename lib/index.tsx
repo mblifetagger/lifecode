@@ -185,7 +185,7 @@ export class QRCode extends React.Component<IProps, {}> {
         y += cellSize * 2;
         x += cellSize * 2;
 
-        if(position == 3) {
+        if(position == 2) {
             this.drawLifeTaggerImage(x, y, size, ctx, colorInner);
         } else{
             this.drawRoundedSquare(lineWidth, x, y, size, colorInner, radiiInner, false, ctx);
