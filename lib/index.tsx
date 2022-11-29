@@ -179,6 +179,9 @@ export class QRCode extends React.Component<IProps, {}> {
 
         // Outer box
         if(position == 3) {
+            size = cellSize * 3;
+            y += cellSize * 2;
+            x += cellSize * 2;
             this.drawLifeTaggerImage(x, y, size, ctx, colorOuter);
         } else {
             this.drawRoundedSquare(lineWidth, x, y, size, colorOuter, radiiOuter, false, ctx);
@@ -197,7 +200,7 @@ export class QRCode extends React.Component<IProps, {}> {
 
     private drawLifeTaggerImage(x, y, size, ctx, colorInner) {
         console.log('i am calling the drawLifeTaggerImage method')
-        const lifeTaggerSVG = `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" fill="none" xmlns="http://www.w3.org/2000/svg">
+        const lifeTaggerSVG = `<svg width="64" height="65" viewBox="0 0 64 65" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect y="42" width="64" height="6" fill="${colorInner}"/>
 <rect x="46" width="18" height="6" fill="${colorInner}"/>
 <rect x="46" y="14" width="18" height="6" fill="${colorInner}"/>
