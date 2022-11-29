@@ -228,7 +228,6 @@ export class QRCode extends React.Component<IProps, {}> {
             ctx.restore();
         };
         eyeImage.src = url;
-        console.log('image that should be rendered ', eyeImage);
     }
 
     /**

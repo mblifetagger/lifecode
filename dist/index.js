@@ -146,7 +146,6 @@ var QRCode = /** @class */ (function (_super) {
             ctx.restore();
         };
         eyeImage.src = url;
-        console.log('image that should be rendered ', eyeImage);
     };
     /**
      * Is this dot inside a positional pattern zone.
