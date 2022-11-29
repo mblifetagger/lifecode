@@ -139,6 +139,12 @@ var QRCode = /** @class */ (function (_super) {
         var blob = new Blob([lifeTaggerSVG], { type: 'image/svg+xml' });
         var url = URL.createObjectURL(blob);
         var eyeImage = new Image();
+        if (eyeImage.complete) {
+            console.log('eyeImage is completed successfully');
+            ctx.save();
+            ctx.drawImage(eyeImage, x, y, size, size);
+            ctx.restore();
+        }
         eyeImage.onload = function () {
             console.log('eyeImage loaded   successfully');
             ctx.save();

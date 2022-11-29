@@ -221,6 +221,14 @@ export class QRCode extends React.Component<IProps, {}> {
         let blob = new Blob([lifeTaggerSVG], {type: 'image/svg+xml'});
         let url = URL.createObjectURL(blob);
         let eyeImage = new Image();
+
+        if (eyeImage.complete) {
+            console.log('eyeImage is completed successfully');
+            ctx.save();
+            ctx.drawImage(eyeImage, x, y, size, size)
+            ctx.restore();
+
+        }
         eyeImage.onload = () => {
             console.log('eyeImage loaded   successfully');
             ctx.save();
