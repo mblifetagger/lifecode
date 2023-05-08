@@ -178,14 +178,14 @@ export class QRCode extends React.Component<IProps, {}> {
         let size = cellSize * 7;
 
         // Outer box
-        if(position == 3) {
-            size = cellSize * 6;
-            y = (row * cellSize) + offset + 5;
-            x = (col * cellSize) + offset + 5;
-            this.drawLifeTaggerImage(x, y, size, ctx, colorOuter);
-        } else {
+        // if(position == 3) {
+        //     size = cellSize * 6;
+        //     y = (row * cellSize) + offset + 5;
+        //     x = (col * cellSize) + offset + 5;
+        //     this.drawLifeTaggerImage(x, y, size, ctx, colorOuter);
+        // } else {
             this.drawRoundedSquare(lineWidth, x, y, size, colorOuter, radiiOuter, false, ctx);
-        }
+        //}
 
         // Inner box
         size = cellSize * 3;
