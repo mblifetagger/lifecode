@@ -124,7 +124,9 @@ var QRCode = /** @class */ (function (_super) {
         //     x = (col * cellSize) + offset + 5;
         //     this.drawLifeTaggerImage(x, y, size, ctx, colorOuter);
         // } else {
-        this.drawRoundedSquare(lineWidth, x, y, size, colorOuter, radiiOuter, false, ctx);
+        if (position < 3) {
+            this.drawRoundedSquare(lineWidth, x, y, size, colorOuter, radiiOuter, false, ctx);
+        }
         //}
         // Inner box
         size = cellSize * 3;
