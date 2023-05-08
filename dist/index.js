@@ -228,7 +228,6 @@ var QRCode = /** @class */ (function (_super) {
             { row: 0, col: 0 },
             { row: 0, col: length - 7 },
             { row: length - 7, col: 0 },
-            { row: length - 7, col: length - 7 },
         ];
         ctx.strokeStyle = fgColor;
         if (qrStyle === 'dots') {
