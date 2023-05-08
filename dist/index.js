@@ -117,16 +117,15 @@ var QRCode = /** @class */ (function (_super) {
         var y = (row * cellSize) + offset;
         var x = (col * cellSize) + offset;
         var size = cellSize * 7;
-        // Outer box
-        if (position == 3) {
-            size = cellSize * 6;
-            y = (row * cellSize) + offset + 5;
-            x = (col * cellSize) + offset + 5;
-            this.drawLifeTaggerImage(x, y, size, ctx, colorOuter);
-        }
-        else {
-            this.drawRoundedSquare(lineWidth, x, y, size, colorOuter, radiiOuter, false, ctx);
-        }
+        // // Outer box
+        // if(position == 3) {
+        //     size = cellSize * 6;
+        //     y = (row * cellSize) + offset + 5;
+        //     x = (col * cellSize) + offset + 5;
+        //     this.drawLifeTaggerImage(x, y, size, ctx, colorOuter);
+        // } else {
+        //     this.drawRoundedSquare(lineWidth, x, y, size, colorOuter, radiiOuter, false, ctx);
+        // }
         // Inner box
         size = cellSize * 3;
         y += cellSize * 2;
