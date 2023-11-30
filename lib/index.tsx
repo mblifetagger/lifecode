@@ -178,16 +178,16 @@ export class QRCode extends React.Component<IProps, {}> {
         let size = cellSize * 7;
 
         // Outer box
-        // if(position == 3) {
-        //     size = cellSize * 6;
-        //     y = (row * cellSize) + offset + 5;
-        //     x = (col * cellSize) + offset + 5;
-        //     this.drawLifeTaggerImage(x, y, size, ctx, colorOuter);
-        // } else {
-        if (position < 3) {
-            this.drawRoundedSquare(lineWidth, x, y, size, colorOuter, radiiOuter, false, ctx);
+        if(position == 3) {
+            size = cellSize * 6;
+            y = (row * cellSize) + offset + 5;
+            x = (col * cellSize) + offset + 5;
+            this.drawLifeTaggerImage(x, y, size, ctx, colorOuter);
+        } else {
+            if (position < 3) {
+                this.drawRoundedSquare(lineWidth, x, y, size, colorOuter, radiiOuter, false, ctx);
+            }
         }
-        //}
 
         // Inner box
         size = cellSize * 3;
@@ -201,8 +201,7 @@ export class QRCode extends React.Component<IProps, {}> {
     };
 
     private drawLifeTaggerImage(x, y, size, ctx, colorInner) {
-        console.log('i am calling the drawLifeTaggerImage method')
-        const lifeTaggerSVG = `<svg width="64" height="65" viewBox="0 0 64 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+        const lifeTaggerSVG = `<svg viewBox="0 0 114 115" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect y="42" width="64" height="6" fill="${colorInner}"/>
 <rect x="46" width="18" height="6" fill="${colorInner}"/>
 <rect x="46" y="14" width="18" height="6" fill="${colorInner}"/>
@@ -248,7 +247,6 @@ export class QRCode extends React.Component<IProps, {}> {
         let eyeImage = new Image();
         
         eyeImage.onload = () => {
-            console.log('eyeImage loaded   successfully');
             ctx.save();
             ctx.drawImage(eyeImage, x, y, size, size)
             ctx.restore();
@@ -349,7 +347,7 @@ export class QRCode extends React.Component<IProps, {}> {
             { row: 0, col: 0 },
             { row: 0, col: length - 7 },
             { row: length - 7, col: 0 },
-            //{ row: length - 7, col: length - 7 },
+            { row: length - 4, col: length - 4 },
         ];
 
         ctx.strokeStyle = fgColor;
@@ -386,7 +384,7 @@ export class QRCode extends React.Component<IProps, {}> {
         }
 
         // Draw positioning patterns
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 4; i++) {
             const { row, col } = positioningZones[i];
 
             let radii = eyeRadius;
@@ -418,7 +416,6 @@ export class QRCode extends React.Component<IProps, {}> {
                 image.crossOrigin = 'Anonymous';
             }
             image.onload = () => {
-                console.log('image is loaded   successfully');
                 ctx.save();
                 ctx.globalAlpha = logoOpacity;
                 ctx.drawImage(image, dxLogo + offset, dyLogo + offset, dWidthLogo, dHeightLogo);
