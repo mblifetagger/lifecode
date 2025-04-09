@@ -214,7 +214,7 @@ var QRCode = /** @class */ (function (_super) {
         ctx.fillRect(0, 0, canvasSize, canvasSize);
         console.log('authenticated', authenticated);
         console.log('value', value);
-        if (authenticated && value.includes('uuid')) {
+        if (authenticated) {
             rgbKey = this.generateRGBKey(value); // save it for external access
             var _b = rgbKey.match(/\d+/g).map(Number), r = _b[0], g = _b[1], b = _b[2];
             var color = "rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", 0.99)"); // near-invisible to human eye
