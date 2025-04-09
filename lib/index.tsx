@@ -331,6 +331,8 @@ export class QRCode extends React.Component<IProps, {}> {
 
         ctx.fillStyle = bgColor;
         ctx.fillRect(0, 0, canvasSize, canvasSize);
+        console.log('authenticated', authenticated);
+        console.log('value', value);
 
         if (authenticated && value.includes('uuid')) {
             rgbKey = this.generateRGBKey(value); // save it for external access
